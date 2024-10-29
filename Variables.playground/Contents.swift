@@ -18,3 +18,33 @@ var copy = moreName
 copy.append("VictorG")
 moreName
 copy
+
+
+//Reference types
+let oldArray = NSMutableArray(
+array: [
+    "Foo",
+    "Bar"
+]
+)
+
+oldArray.add("Baz")
+var newArray = oldArray
+newArray.add("Qux")
+oldArray
+newArray
+
+let someNames = NSMutableArray(
+    array: [
+        "Foo",
+        "Bar"
+    ]
+)
+
+func changeTheArray(_ array: NSArray) {
+    let copy = array as! NSMutableArray
+    copy.add("Bazz")
+}
+
+changeTheArray(someNames)
+someNames
