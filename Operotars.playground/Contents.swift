@@ -26,3 +26,36 @@ type(of: unaryPostFix)
 let result = 1 + 2
 let names = "Foo" + " " + "Bar"
 
+
+let age = 30
+let message: String
+if age >= 18 {
+    message = "You are and adult"
+} else {
+    message = "You are not yet and adult"
+}
+
+message
+
+//Ternario
+let message2 = age > 18 ? "Eres mayor de edad" : "Todavia no eres un adulto"
+
+
+let myName = "Vandad"
+let myAge2 = 20
+let yourName = "Foo"
+let yourAge2 = 19
+
+if myName == "vandad" {
+   "Your name is \(myName)"
+}
+
+if myName == "Vandad" {
+    "Now I guessed it correctly"
+} else if myName == "Foo" {
+    "Are you Foo?"
+} else {
+    "Okay I give up"
+}
+
+//Tambien existe && y ||
