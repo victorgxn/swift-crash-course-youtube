@@ -22,11 +22,26 @@ struct ButtonExample: View {
                     .background(Color.blue)
                     .cornerRadius(23)
             })
-            .padding()
         }
     }
 }
 
+struct Counter: View {
+    @State var subscribersNumber = 219
+    var body: some View {
+        Button(action: {
+           subscribersNumber += 1
+        }, label: {
+            Text("Suscriptores: \(subscribersNumber)")
+                .bold()
+                .frame(width: 150, height: 50)
+                .foregroundColor(.white)
+                .background(Color.red)
+                .cornerRadius(10)
+        })
+    }
+}
+        
 #Preview {
-    ButtonExample()
+    Counter()
 }
