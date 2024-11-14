@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A237A7792CE68C26003DC5DB /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237A7782CE68C26003DC5DB /* MenuView.swift */; };
+		A237A77C2CE69616003DC5DB /*   IMCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237A77B2CE69616003DC5DB /*   IMCView.swift */; };
 		A2740A442CE4F159005FB23C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2740A432CE4F159005FB23C /* MainView.swift */; };
 		A2740A472CE4F210005FB23C /* TextExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2740A462CE4F210005FB23C /* TextExample.swift */; };
 		A2740A492CE51123005FB23C /* ImageExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2740A482CE51123005FB23C /* ImageExample.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A237A7782CE68C26003DC5DB /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A237A77B2CE69616003DC5DB /*   IMCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "  IMCView.swift"; sourceTree = "<group>"; };
 		A2740A432CE4F159005FB23C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A2740A462CE4F210005FB23C /* TextExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExample.swift; sourceTree = "<group>"; };
 		A2740A482CE51123005FB23C /* ImageExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExample.swift; sourceTree = "<group>"; };
@@ -83,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A237A77A2CE69602003DC5DB /* IMC */ = {
+			isa = PBXGroup;
+			children = (
+				A237A77B2CE69616003DC5DB /*   IMCView.swift */,
+			);
+			path = IMC;
+			sourceTree = "<group>";
+		};
 		A2740A402CE4F0C7005FB23C /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,10 +138,12 @@
 		A2EB7B862CDA9A680090039D /* CursoiOS */ = {
 			isa = PBXGroup;
 			children = (
+				A237A77A2CE69602003DC5DB /* IMC */,
 				A2740A452CE4F19A005FB23C /* Components */,
 				A2740A402CE4F0C7005FB23C /* Exercises */,
 				A2EB7B872CDA9A680090039D /* CursoiOSApp.swift */,
 				A2740A432CE4F159005FB23C /* MainView.swift */,
+				A237A7782CE68C26003DC5DB /* MenuView.swift */,
 				A2EB7B8B2CDA9A690090039D /* Assets.xcassets */,
 				A2EB7B8D2CDA9A690090039D /* Preview Content */,
 			);
@@ -293,8 +307,10 @@
 			files = (
 				A2EB7B8A2CDA9A680090039D /* Exercise1.swift in Sources */,
 				A2740A4D2CE53269005FB23C /* ButtonExample.swift in Sources */,
+				A237A77C2CE69616003DC5DB /*   IMCView.swift in Sources */,
 				A2740A4B2CE522A8005FB23C /* LabelExample.swift in Sources */,
 				A2740A4F2CE5CE71005FB23C /* TextField.swift in Sources */,
+				A237A7792CE68C26003DC5DB /* MenuView.swift in Sources */,
 				A2740A472CE4F210005FB23C /* TextExample.swift in Sources */,
 				A2740A442CE4F159005FB23C /* MainView.swift in Sources */,
 				A2740A492CE51123005FB23C /* ImageExample.swift in Sources */,
