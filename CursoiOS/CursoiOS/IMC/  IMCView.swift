@@ -12,12 +12,15 @@ struct IMCView: View {
     /*init() {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
     }*/
+    
+    //Variables de estado
+    @State var gender:Int = 0
 
     var body: some View {
         VStack {
             HStack {
-                ToggleButton(text: "Victorg", imageName: "heart.fill", index: 0   )
-                ToggleButton(text: "Victorg", imageName: "heart.fill", index: 0   )
+                ToggleButton(text: "Hombre", imageName: "heart.fill", gender: 0, selectedGender: $gender  )
+                ToggleButton(text: "Mujer", imageName: "star.fill", gender: 1, selectedGender: $gender  )
             }
         }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(.backgroundApp)
             //.navigationBarBackButtonHidden()
@@ -31,21 +34,36 @@ struct IMCView: View {
 }
 
 struct ToggleButton:View {
-    
     let text: String
     let imageName: String
-    let index: Int
+    let gender: Int
+    @Binding var selectedGender: Int
+    
     var body: some View {
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+        let color = if (gender == selectedGender) {
+            Color.backgroundComponentSelected
+        } else {
+            Color.backgroundComponent
+        }
+        Button(action: {
+            selectedGender = gender
+        }, label: {
             VStack {
                 Image(systemName: imageName)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 200)
                     .foregroundColor(.white)
-                Text(text)
-            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(.backgroundComponent)
+                InformationText(text: text)
+            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(color)
         })
+    }
+}
+
+struct InformationText: View {
+    let text: String
+    var body: some View {
+        Text(text).font(.largeTitle).bold().foregroundColor(.white)
     }
 }
 
