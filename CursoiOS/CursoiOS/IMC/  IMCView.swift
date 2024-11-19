@@ -15,6 +15,7 @@ struct IMCView: View {
     
     //Variables de estado
     @State var gender:Int = 0
+    @State var height:Double = 150
 
     var body: some View {
         VStack {
@@ -22,6 +23,7 @@ struct IMCView: View {
                 ToggleButton(text: "Hombre", imageName: "heart.fill", gender: 0, selectedGender: $gender  )
                 ToggleButton(text: "Mujer", imageName: "star.fill", gender: 1, selectedGender: $gender  )
             }
+            HeightCalculator(selectedHeight: $height)
         }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(.backgroundApp)
             //.navigationBarBackButtonHidden()
             //.navigationTitle("IMC Calculator")
@@ -38,6 +40,7 @@ struct ToggleButton:View {
     let imageName: String
     let gender: Int
     @Binding var selectedGender: Int
+    
     
     var body: some View {
         let color = if (gender == selectedGender) {
@@ -67,6 +70,23 @@ struct InformationText: View {
     }
 }
 
+struct TitleText: View {
+    let text: String
+    var body: some View {
+        Text(text).font(.title2).foregroundColor(.gray)
+    }
+}
+
+struct HeightCalculator: View {
+    @Binding var selectedHeight: Double
+    var body: some View {
+        VStack {
+            TitleText(text: "Altura")
+            InformationText(text: "\(Int(selectedHeight)) cm")
+            Slider(value: $selectedHeight, in : 100...200, step: 1).accentColor(.purple).padding(.horizontal, 16)
+        }.frame(maxWidth: .infinity, maxHeight: .infinity).background(.backgroundComponent)
+    }
+}
 
 #Preview {
     IMCView()
