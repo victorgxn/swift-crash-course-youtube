@@ -16,6 +16,8 @@ struct IMCView: View {
     //Variables de estado
     @State var gender:Int = 0
     @State var height:Double = 150
+    @State var age:Int = 18
+    @State var weight:Int = 80
 
     var body: some View {
         VStack {
@@ -24,7 +26,12 @@ struct IMCView: View {
                 ToggleButton(text: "Mujer", imageName: "star.fill", gender: 1, selectedGender: $gender  )
             }
             HeightCalculator(selectedHeight: $height)
-        }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(.backgroundApp)
+            HStack{
+                CounterButton(tCounterButton: "Edad", number: $age)
+                CounterButton(tCounterButton: "Peso", number: $weight)
+            }
+        }
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity).background(.backgroundApp)
             //.navigationBarBackButtonHidden()
             //.navigationTitle("IMC Calculator")
             .toolbar {
@@ -85,6 +92,45 @@ struct HeightCalculator: View {
             InformationText(text: "\(Int(selectedHeight)) cm")
             Slider(value: $selectedHeight, in : 100...200, step: 1).accentColor(.purple).padding(.horizontal, 16)
         }.frame(maxWidth: .infinity, maxHeight: .infinity).background(.backgroundComponent)
+    }
+}
+
+//Sin dolar solo para representador
+//Con dolar para poder modificarlo
+//@Binding a los parametros que tiene estados
+struct CounterButton: View {
+    let tCounterButton:String
+    @Binding var number:Int
+    var body: some View {
+        VStack {
+            TitleText(text: tCounterButton)
+            InformationText(text: String(number))
+            HStack {
+                Button(action: {}) {
+                    ZStack {
+                        Circle()
+                            .frame(width: 70, height: 70)
+                            .foregroundColor(.purple)
+                        Image(systemName: "plus")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 25, height: 25)
+                    }
+                }
+                Button(action: {}) {
+                    ZStack {
+                        Circle()
+                            .frame(width: 70, height: 70)
+                            .foregroundColor(.purple)
+                        Image(systemName: "minus")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.white)
+                            .frame(width: 25, height: 25)
+                    }
+                }
+            }
+        }.frame(maxWidth:.infinity, maxHeight: .infinity).background(.backgroundComponent)
     }
 }
 
