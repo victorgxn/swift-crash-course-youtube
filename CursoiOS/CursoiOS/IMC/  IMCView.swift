@@ -106,18 +106,11 @@ struct CounterButton: View {
             TitleText(text: tCounterButton)
             InformationText(text: String(number))
             HStack {
-                Button(action: {}) {
-                    ZStack {
-                        Circle()
-                            .frame(width: 70, height: 70)
-                            .foregroundColor(.purple)
-                        Image(systemName: "plus")
-                            .resizable()
-                            .foregroundColor(.white)
-                            .frame(width: 25, height: 25)
+                Button(action: {
+                    if (number < 100) {
+                        number -= 1
                     }
-                }
-                Button(action: {}) {
+                }) {
                     ZStack {
                         Circle()
                             .frame(width: 70, height: 70)
@@ -127,6 +120,22 @@ struct CounterButton: View {
                             .scaledToFit()
                             .foregroundColor(.white)
                             .frame(width: 25, height: 25)
+                    }
+                }
+                Button(action: {
+                    if (number > 0) {
+                        number += 1
+                    }
+                }) {
+                    ZStack {
+                        Circle()
+                            .frame(width: 70, height: 70)
+                            .foregroundColor(.purple)
+                        Image(systemName: "plus")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 25, height: 25)
+                        
                     }
                 }
             }
